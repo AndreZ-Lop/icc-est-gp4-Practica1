@@ -1,17 +1,50 @@
 package app;
 import metodo.InsertioSort;
 import metodo.ShellSort;
+import java.util.Scanner;
 public class App {
     public static void main(String[] args) throws Exception {
+        Scanner lector = new Scanner(System.in);
         int []numeros = {12,-7,25,0,-15,33,19,-22,5,48,-3};
-        boolean asc = true;
-        InsertioSort aplicacionInsertion = new InsertioSort();
-        System.out.println("Arreglo ascendente");
-        int [] insertionAsc = aplicacionInsertion.insertionSort(numeros, asc);
-        aplicacionInsertion.printInsertionSort(insertionAsc);
-        System.out.println("Arreglo descendente");
-        asc = false;
-        int [] insertioDes = aplicacionInsertion.insertionSort(numeros, asc);
-        aplicacionInsertion.printInsertionSort(insertioDes);   
+        int opcion;
+        int algoritmoDeseado;
+        String seleccionUsuario;
+        do{
+            System.out.println("=== Programa de Ordenamientos ===");
+            System.out.println();
+            System.out.println("1 - Ejecutar ordenamientos");
+            System.out.println("2 - Salir");
+            opcion = lector.nextInt();
+            if(opcion == 1){
+                System.out.println("Que algoritmo desea ver?");
+                System.out.println("1 - Insertion Sort");
+                System.out.println("2 - Shell Short");
+                algoritmoDeseado = lector.nextInt();
+                while (algoritmoDeseado <= 0 && algoritmoDeseado>2){
+                    System.out.println("Error valor ingresado no valido");
+                    algoritmoDeseado = lector.nextInt();
+                }
+                if (algoritmoDeseado == 1){
+                    System.out.println("Orden ascendente o descendente? (A/D)");
+                    seleccionUsuario = lector.next();
+                    boolean asc = seleccionUsuario.equalsIgnoreCase("A");
+                    if (asc){
+                        InsertioSort aplicacionInsertion = new InsertioSort();
+                        aplicacionInsertion.ordenarYMostrar(numeros,asc);
+                    }else{
+                        InsertioSort aplicacionInsertion = new InsertioSort();
+                        aplicacionInsertion.ordenarYMostrar(numeros,asc);
+                    }
+                    
+                }
+
+            }
+            System.out.println("=== Programa de Ordenamientos");
+            System.out.println("1 - Ejecutar ordenamientos");
+            System.out.println("2 - Salir");
+            opcion = lector.nextInt();
+        }while(opcion!=2);
+        lector.close();
+        
     }
-}
+} 
