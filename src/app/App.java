@@ -1,21 +1,17 @@
-import java.util.Arrays;
+package app;
+import metodo.InsertioSort;
+import metodo.ShellSort;
 public class App {
     public static void main(String[] args) throws Exception {
-        int []numeros = {2,0,-15,10,20,-3,-5,7};
-        System.out.println(Arrays.toString(numeros));
-        InsertioSort apliacion = new InsertioSort();
-
-        apliacion.insertionSort(numeros);
-        
-        System.out.println(Arrays.toString(numeros));
-
-        int [] numeros1 = {2,0,-15,10,20,-3,-5,7};
-        System.out.println(Arrays.toString(numeros1));
-        ShellSort aplicacionShell = new ShellSort();
-
-        aplicacionShell.shellSort(numeros1);
-        
-        System.out.println(Arrays.toString(numeros1));
-
+        int []numeros = {12,-7,25,0,-15,33,19,-22,5,48,-3};
+        boolean asc = true;
+        InsertioSort aplicacionInsertion = new InsertioSort();
+        System.out.println("Arreglo ascendente");
+        int [] insertionAsc = aplicacionInsertion.insertionSort(numeros, asc);
+        aplicacionInsertion.printInsertionSort(insertionAsc);
+        System.out.println("Arreglo descendente");
+        asc = false;
+        int [] insertioDes = aplicacionInsertion.insertionSort(numeros, asc);
+        aplicacionInsertion.printInsertionSort(insertioDes);   
     }
 }
