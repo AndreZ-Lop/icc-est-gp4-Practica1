@@ -1,15 +1,16 @@
 package metodo;
 public class ShellSort {
     public void metodoShellSort(boolean asc, int []numeros){
+        int [] numeros1 = numeros;
         if(asc){
             int comparaciones = 0;
             int cambios = 0;
-            int tamanio = numeros.length;
+            int tamanio = numeros1.length;
             int iteraciones = 0;
 
             System.out.println("==== MÉTODO SHELL SORT ====");
             System.out.println("\nArreglo original:");
-            mostrarArreglo(numeros);
+            mostrarArreglo(numeros1);
             System.out.println();
 
             // el gap comienza en n/2 y se reduce a la mitad en cada iteración
@@ -17,31 +18,31 @@ public class ShellSort {
                 System.out.println("--- GAP = " + gap + " ---");
                 
                 for (int i = gap; i < tamanio; i++) {
-                    int clave = numeros[i];
+                    int clave = numeros1[i];
                     int j = i;
 
                     System.out.printf("I%-2d  ", i);
-                    mostrarArreglo(numeros);
+                    mostrarArreglo(numeros1);
 
                     while (j >= gap) {
                         comparaciones++;
                         int a = j - gap;
                         int b = j;
 
-                        int ancho = numeros.length * 5;
+                        int ancho = numeros1.length * 5;
                         StringBuilder margen = new StringBuilder();
                         for (int k = 0; k < ancho; k++) margen.append(" ");
 
                         System.out.printf("      %s a=%-1d  b=%-1d  [a]=%-4d [b]=%-4d  ", 
-                        margen.toString(), a, b, numeros[a], clave);
+                        margen.toString(), a, b, numeros1[a], clave);
 
                         // --- AQUÍ SE FORMAN LAS 2 ESCALERAS ---
-                        if (numeros[a] > clave) {
+                        if (numeros1[a] > clave) {
                             System.out.println("cambio=si");
                             
                             System.out.print("      "); 
                             for (int k = 0; k < tamanio; k++) {
-                                if (k == b) System.out.printf("%-5d", numeros[a]); 
+                                if (k == b) System.out.printf("%-5d", numeros1[a]); 
                                 else System.out.printf("%-5s", "");
                             }
                             
@@ -52,7 +53,7 @@ public class ShellSort {
                             }
                             System.out.println();
 
-                            numeros[b] = numeros[a];
+                            numeros1[b] = numeros1[a];
                             cambios++;
                             j -= gap;
                         } else {
@@ -60,7 +61,7 @@ public class ShellSort {
                             break;
                         }
                     }
-                    numeros[j] = clave;
+                    numeros1[j] = clave;
                     
                     System.out.print("      ");
                     for (int k = 0; k < tamanio; k++) {
@@ -73,19 +74,19 @@ public class ShellSort {
             }
              // AQUI SE MOSTRARA TODAS LAS COMPARACIONES,ITERACIONES Y CAMBIOS HECHA
             System.out.print("end   ");
-            mostrarArreglo(numeros);
+            mostrarArreglo(numeros1);
             System.out.println("\nCOMPARACIONES = " + comparaciones);
             System.out.println("ITERACIONES   = " + iteraciones);
             System.out.println("CAMBIOS       = " + cambios);
         }else{
             int comparaciones = 0;
             int cambios = 0;
-            int tamanio = numeros.length;
+            int tamanio = numeros1.length;
             int iteraciones = 0;
 
             System.out.println("==== MÉTODO SHELL SORT ====");
             System.out.println("\nArreglo original:");
-            mostrarArreglo(numeros);
+            mostrarArreglo(numeros1);
             System.out.println();
 
             // el gap comienza en n/2 y se reduce a la mitad en cada iteración
@@ -93,31 +94,31 @@ public class ShellSort {
                 System.out.println("--- GAP = " + gap + " ---");
                 
                 for (int i = gap; i < tamanio; i++) {
-                    int clave = numeros[i];
+                    int clave = numeros1[i];
                     int j = i;
 
                     System.out.printf("I%-2d  ", i);
-                    mostrarArreglo(numeros);
+                    mostrarArreglo(numeros1);
 
                     while (j >= gap) {
                         comparaciones++;
                         int a = j - gap;
                         int b = j;
 
-                        int ancho = numeros.length * 5;
+                        int ancho = numeros1.length * 5;
                         StringBuilder margen = new StringBuilder();
                         for (int k = 0; k < ancho; k++) margen.append(" ");
 
                         System.out.printf("      %s a=%-1d  b=%-1d  [a]=%-4d [b]=%-4d  ", 
-                        margen.toString(), a, b, numeros[a], clave);
+                        margen.toString(), a, b, numeros1[a], clave);
 
                         // --- AQUÍ SE FORMAN LAS 2 ESCALERAS ---
-                        if (numeros[a] < clave) {
+                        if (numeros1[a] < clave) {
                             System.out.println("cambio=si");
                             
                             System.out.print("      "); 
                             for (int k = 0; k < tamanio; k++) {
-                                if (k == b) System.out.printf("%-5d", numeros[a]); 
+                                if (k == b) System.out.printf("%-5d", numeros1[a]); 
                                 else System.out.printf("%-5s", "");
                             }
                             
@@ -128,7 +129,7 @@ public class ShellSort {
                             }
                             System.out.println();
 
-                            numeros[b] = numeros[a];
+                            numeros1[b] = numeros1[a];
                             cambios++;
                             j -= gap;
                         } else {
@@ -136,7 +137,7 @@ public class ShellSort {
                             break;
                         }
                     }
-                    numeros[j] = clave;
+                    numeros1[j] = clave;
                     
                     System.out.print("      ");
                     for (int k = 0; k < tamanio; k++) {
@@ -149,7 +150,7 @@ public class ShellSort {
             }
              // AQUI SE MOSTRARA TODAS LAS COMPARACIONES,ITERACIONES Y CAMBIOS HECHA
             System.out.print("end   ");
-            mostrarArreglo(numeros);
+            mostrarArreglo(numeros1);
             System.out.println("\nCOMPARACIONES = " + comparaciones);
             System.out.println("ITERACIONES   = " + iteraciones);
             System.out.println("CAMBIOS       = " + cambios);
@@ -157,7 +158,8 @@ public class ShellSort {
     }
 
     public static void mostrarArreglo(int[] numeros){
-        for (int recorrer : numeros){
+        int [] numeros1 = numeros;
+        for (int recorrer : numeros1){
             System.out.printf("%-5d", recorrer);
         }
         System.out.println();
