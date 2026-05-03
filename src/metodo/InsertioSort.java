@@ -94,7 +94,9 @@ public class InsertioSort {
                 while (j >= 0) {
                     comparaciones++;
                     int ancho = numeros1.length * 5;
-                    StringBuilder margen = new StringBuilder();
+                    StringBuilder margen = new StringBuilder();// Clase que nos permite manipular secuencias de caracteres. Siendo ideal para casos como estos debido a su poco consumo en memoria
+                    // a esta clase se le pueden añadir insert, appends o incluso delete para eliminar caracteres.
+                    // este StringBuilder no ahorra el hecho de crear multiples objetos de la clase String en memoria para posterior a ello concatenarlos
                     for (int k = 0; k < ancho; k++) margen.append(" ");
 
                     System.out.printf("      %s a=%-1d  b=%-1d  [a]=%-4d [b]=%-4d  ", 
