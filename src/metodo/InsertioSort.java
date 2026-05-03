@@ -1,9 +1,10 @@
 package metodo;
 public class InsertioSort {
-    public void ordenarYMostrar(int[] numeros,boolean asc) {
+    public void metodoInsertionSort(int[] numeros,boolean asc) {
         if(asc){
             int comparaciones = 0;
             int cambios = 0;
+            int iteraciones = 0;
 
             System.out.println("==== METODO INSERCIÓN ====");
             System.out.println("\nArreglo original:");
@@ -63,16 +64,19 @@ public class InsertioSort {
                     else System.out.printf("%-5s", "");
                 }
                 System.out.println("\n");
+                iteraciones++;
             }
 
+            // AQUI SE MOSTRARA TODAS LAS COMPARACIONES,ITERACIONES Y CAMBIOS HECHA
             System.out.print("end   ");
             mostrarArreglo(numeros);
             System.out.println("\nCOMPARACIONES = " + comparaciones);
-            System.out.println("ITERACIONES   = " + (numeros.length - 1));
+            System.out.println("ITERACIONES   = " + iteraciones);
             System.out.println("CAMBIOS       = " + cambios);
         }else{
             int comparaciones = 0;
             int cambios = 0;
+            int iteraciones = 0;
 
             System.out.println("==== METODO INSERCIÓN ====");
             System.out.println("\nArreglo original:");
@@ -132,20 +136,21 @@ public class InsertioSort {
                     else System.out.printf("%-5s", "");
                 }
                 System.out.println("\n");
+                iteraciones++;
             }
-
+            // AQUI SE MOSTRARA TODAS LAS COMPARACIONES,ITERACIONES Y CAMBIOS HECHA
             System.out.print("end   ");
             mostrarArreglo(numeros);
             System.out.println("\nCOMPARACIONES = " + comparaciones);
-            System.out.println("ITERACIONES   = " + (numeros.length - 1));
+            System.out.println("ITERACIONES   = " +  iteraciones);
             System.out.println("CAMBIOS       = " + cambios);
         }
 
     }
 
     public static void mostrarArreglo(int[] numeros) {
-            for (int n : numeros) {
-                System.out.printf("%-5d", n); // "printF" o print formatted es un tipo de print que nos permite alienar columanas en este caso pero tambien puede formatear tipos de datos
+            for (int recorrer : numeros) {
+                System.out.printf("%-5d", recorrer); // "printF" o print formatted es un tipo de print que nos permite alienar columanas en este caso pero tambien puede formatear tipos de datos
             }
             System.out.println();
         }

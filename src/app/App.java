@@ -15,6 +15,10 @@ public class App {
             System.out.println("1 - Ejecutar ordenamientos");
             System.out.println("2 - Salir");
             opcion = lector.nextInt();
+            while (opcion <= 0 && opcion>2){
+                System.out.println("Error valor ingresado no valido");
+                opcion = lector.nextInt();
+            }
             if(opcion == 1){
                 System.out.println("Que algoritmo desea ver?");
                 System.out.println("1 - Insertion Sort");
@@ -28,21 +32,18 @@ public class App {
                     System.out.println("Orden ascendente o descendente? (A/D)");
                     seleccionUsuario = lector.next();
                     boolean asc = seleccionUsuario.equalsIgnoreCase("A");
-                    if (asc){
-                        InsertioSort aplicacionInsertion = new InsertioSort();
-                        aplicacionInsertion.ordenarYMostrar(numeros,asc);
-                    }else{
-                        InsertioSort aplicacionInsertion = new InsertioSort();
-                        aplicacionInsertion.ordenarYMostrar(numeros,asc);
-                    }
+                    InsertioSort aplicacionInsertion = new InsertioSort();
+                    aplicacionInsertion.metodoInsertionSort(numeros, asc);
                     
+                }else{
+                    System.out.println("Orden ascendente o descendente? (A/D)");
+                    seleccionUsuario = lector.next();
+                    boolean asc = seleccionUsuario.equalsIgnoreCase("A");
+                    ShellSort aplicacionShellShort = new  ShellSort();
+                    aplicacionShellShort.metodoShellSort(asc, numeros);
                 }
 
             }
-            System.out.println("=== Programa de Ordenamientos");
-            System.out.println("1 - Ejecutar ordenamientos");
-            System.out.println("2 - Salir");
-            opcion = lector.nextInt();
         }while(opcion!=2);
         lector.close();
         
