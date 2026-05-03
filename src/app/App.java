@@ -15,7 +15,7 @@ public class App {
             System.out.println("1 - Ejecutar ordenamientos");
             System.out.println("2 - Salir");
             opcion = lector.nextInt();
-            while (opcion <= 0 && opcion>2){
+            while (opcion <= 0 || opcion>2){
                 System.out.println("Error valor ingresado no valido");
                 opcion = lector.nextInt();
             }
@@ -24,7 +24,7 @@ public class App {
                 System.out.println("1 - Insertion Sort");
                 System.out.println("2 - Shell Short");
                 algoritmoDeseado = lector.nextInt();
-                while (algoritmoDeseado <= 0 && algoritmoDeseado>2){
+                while (algoritmoDeseado <= 0 || algoritmoDeseado>2){
                     System.out.println("Error valor ingresado no valido");
                     algoritmoDeseado = lector.nextInt();
                 }
