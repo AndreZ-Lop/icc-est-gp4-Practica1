@@ -1,7 +1,7 @@
 package metodo;
 public class ShellSort {
     public void metodoShellSort(boolean asc, int []numeros){
-        int [] numeros1 = numeros;
+        int [] numeros1 = numeros.clone();
         if(asc){
             int comparaciones = 0;
             int cambios = 0;
