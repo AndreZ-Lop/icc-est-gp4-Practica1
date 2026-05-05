@@ -16,7 +16,6 @@ public class InsertioSort {
             System.out.println();
 
             for (int i = 1; i < numeros1.length; i++) {
-                int suma=0;
                 int clave = numeros1[i];
                 int j = i - 1;
 
@@ -26,40 +25,35 @@ public class InsertioSort {
                     comparaciones++;
                     int a = j;
                     int b = j + 1;
-
+                    System.out.print(" ");
                     if (numeros1[j] > clave) {
+                        System.out.println();
+                        System.out.print("   ");
+                        boolean aux=false;
+                        for(int k = 0;k<numeros1.length;k++){
+                            if(!aux && k==j){
+                                System.out.print("  "+numeros1[b]+ " " + numeros1[a]);
+                                aux=true;
+
+                            }
+                            System.out.print("    ");
+                        }
+                        
                         numeros1[j + 1] = numeros1[j];
                         cambios++;
                         j--;
                         
-                        System.out.println();
-                        System.out.print("     ");
-                        System.out.print(Arrays.toString(numeros1));
                         System.out.print("     ");
                         System.out.print("a=" + a + "  b=" + b + "  [a]=" + numeros1[a] + "  [b]=" + clave);
                         System.out.println("  cambio=si");
-                        suma++;
                     } else {
-                        System.out.println();
-                        System.out.print("      ");
-                        System.out.print(Arrays.toString(numeros1));
-                        System.out.print("    cambio=no");
-                        System.out.println();
-
                         break;
                     }
                 }
                 numeros1[j + 1] = clave;
-                if(suma==0){
-                     System.out.println();
-                }else{
-                    System.out.println();
-                    System.out.println("     " + "Arreglo tras reingresar el dato reservado");
-                    System.out.println();
-                    System.out.print("     ");
-                    System.out.println(Arrays.toString(numeros1));
-                    System.out.println();
-                }
+                System.out.println();
+                System.out.println(Arrays.toString(numeros1));
+                System.out.println();
                 iteraciones++;
             }
             System.out.println();
@@ -85,7 +79,6 @@ public class InsertioSort {
             System.out.println();
 
             for (int i = 1; i < numeros1.length; i++) {
-                int suma=0;
                 int clave = numeros1[i];
                 int j = i - 1;
 
@@ -95,38 +88,35 @@ public class InsertioSort {
                     comparaciones++;
                     int a = j;
                     int b = j + 1;
+                    System.out.print(" ");
                     if (numeros1[j] < clave) {
+                        System.out.println();
+                        System.out.print("   ");
+                        boolean aux=false;
+                        for(int k = 0;k<numeros1.length;k++){
+                            if(!aux && k==j){
+                                System.out.print("  "+numeros1[b]+ " " + numeros1[a]);
+                                aux=true;
+
+                            }
+                            System.out.print("    ");
+                        }
+                        
                         numeros1[j + 1] = numeros1[j];
                         cambios++;
                         j--;
                         
-                        System.out.println();
-                        System.out.print("     ");
-                        System.out.print(Arrays.toString(numeros1));
                         System.out.print("     ");
                         System.out.print("a=" + a + "  b=" + b + "  [a]=" + numeros1[a] + "  [b]=" + clave);
                         System.out.println("  cambio=si");
-                        suma++;
                     } else {
-                        System.out.println();
-                        System.out.print("    ");
-                        System.out.print(Arrays.toString(numeros1));
-                        System.out.print("    cambio=no");
-                        System.out.println();
                         break;
                     }
                 }
                 numeros1[j + 1] = clave;
-                if(suma==0){
-                     System.out.println();
-                }else{
-                    System.out.println();
-                    System.out.println("     " + "Arreglo tras reingresar el dato reservado");
-                    System.out.println();
-                    System.out.print("     ");
-                    System.out.println(Arrays.toString(numeros1));
-                    System.out.println();
-                }
+                System.out.println();
+                System.out.println(Arrays.toString(numeros1));
+                System.out.println();
                 iteraciones++;
             }
             System.out.println();
